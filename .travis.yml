@@ -1,10 +1,12 @@
 language: node_js
 node_js:
   - 16
- before_install:
+services:
+  - docker
+before_install:
   - docker-compose -f docker-compose-build.yaml build --parallel
   # Do similar for other three images
- script:
+script:
   # Tagging
   - docker tag udagram-api-feed ntpac/udagram-api-feed:v1
   - docker tag udagram-frontend ntpac/udagram-frontend:v1
