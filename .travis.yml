@@ -1,7 +1,7 @@
 language: node_js
 node_js:
   - 16
- script:
+ before_install:
   - docker-compose -f docker-compose-build.yaml build --parallel
   # Tagging
   - docker tag udagram-api-feed ntpac/udagram-api-feed:v1
@@ -17,3 +17,4 @@ node_js:
   - docker push ntpac/udagram-api-user:v1
   - docker push ntpac/reverseproxy:v1
   # Do similar for other three images
+ script:
