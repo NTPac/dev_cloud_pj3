@@ -8,8 +8,6 @@ import bodyParser from 'body-parser';
 import { config } from './config/config';
 import { V0_FEED_MODELS } from './controllers/v0/model.index';
 
-console.log("process.env.POSTGRES_USERNAME: ", process.env.POSTGRES_PASSWORD);
-
 (async () => {
   await sequelize.addModels(V0_FEED_MODELS);
 
