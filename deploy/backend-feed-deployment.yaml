@@ -17,9 +17,9 @@ spec:
       containers:
       - image: ntpac/udagram-api-feed:v3
         name: backend-feed
-        imagePullPolicy: Always
         ports:
-        - containerPort: 8080
+          - containerPort: 8080
+        imagePullPolicy: Always
         env:
           - name: URL
             valueFrom:
